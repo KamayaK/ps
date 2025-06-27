@@ -1,0 +1,112 @@
+import type { Product } from '../types'
+
+export const mockProducts: Product[] = [
+  {
+    id: '1',
+    name: 'DEWALT 20V MAX Cordless Drill Kit',
+    price: 179.99,
+    originalPrice: 229.99,
+    state: 'TX',
+    category: 'Power Tools',
+    brand: 'DEWALT',
+    sku: 'DCD771C2',
+    inStock: true,
+    rating: 4.6,
+    imageUrl: 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=300',
+    discount: 22
+  },
+  {
+    id: '2',
+    name: 'Milwaukee M18 FUEL Hammer Drill',
+    price: 299.99,
+    originalPrice: 349.99,
+    state: 'CA',
+    category: 'Power Tools',
+    brand: 'Milwaukee',
+    sku: 'M18FPD-0',
+    inStock: true,
+    rating: 4.8,
+    imageUrl: 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=300',
+    discount: 14
+  },
+  {
+    id: '3',
+    name: 'Ryobi 18V ONE+ Circular Saw',
+    price: 89.99,
+    originalPrice: 119.99,
+    state: 'FL',
+    category: 'Power Tools',
+    brand: 'Ryobi',
+    sku: 'P507',
+    inStock: false,
+    rating: 4.2,
+    imageUrl: 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=300',
+    discount: 25
+  },
+  {
+    id: '4',
+    name: 'Husky 26 in. Connect Rolling Tool Bag',
+    price: 149.99,
+    state: 'NY',
+    category: 'Tool Storage',
+    brand: 'Husky',
+    sku: 'H26ROLTB',
+    inStock: true,
+    rating: 4.4,
+    imageUrl: 'https://images.pexels.com/photos/5691570/pexels-photo-5691570.jpeg?auto=compress&cs=tinysrgb&w=300'
+  },
+  {
+    id: '5',
+    name: 'BLACK+DECKER 20V MAX Jigsaw',
+    price: 59.99,
+    originalPrice: 79.99,
+    state: 'TX',
+    category: 'Power Tools',
+    brand: 'BLACK+DECKER',
+    sku: 'BDCJS20C',
+    inStock: true,
+    rating: 4.0,
+    imageUrl: 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=300',
+    discount: 25
+  },
+  {
+    id: '6',
+    name: 'CRAFTSMAN V20 Impact Driver Kit',
+    price: 99.99,
+    originalPrice: 129.99,
+    state: 'CA',
+    category: 'Power Tools',
+    brand: 'CRAFTSMAN',
+    sku: 'CMCD700C1',
+    inStock: true,
+    rating: 4.3,
+    imageUrl: 'https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=300',
+    discount: 23
+  },
+  {
+    id: '7',
+    name: 'Stanley FatMax Tape Measure 25ft',
+    price: 24.99,
+    state: 'FL',
+    category: 'Hand Tools',
+    brand: 'Stanley',
+    sku: 'FMHT33502S',
+    inStock: true,
+    rating: 4.7,
+    imageUrl: 'https://images.pexels.com/photos/5691570/pexels-photo-5691570.jpeg?auto=compress&cs=tinysrgb&w=300'
+  },
+  {
+    id: '8',
+    name: 'Klein Tools Electrician Tool Kit',
+    price: 189.99,
+    originalPrice: 219.99,
+    state: 'NY',
+    category: 'Hand Tools',
+    brand: 'Klein Tools',
+    sku: 'CL110KIT',
+    inStock: true,
+    rating: 4.9,
+    imageUrl: 'https://images.pexels.com/photos/5691570/pexels-photo-5691570.jpeg?auto=compress&cs=tinysrgb&w=300',
+    discount: 14
+  }
+]
