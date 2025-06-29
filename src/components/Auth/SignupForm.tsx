@@ -18,14 +18,29 @@ export function SignupForm({ onToggleMode }: SignupFormProps) {
     setLoading(true)
     setError(null)
 
-    const { error } = await supabase.auth.signUp({
+    const {data, error } = await supabase.auth.signUp({
       email,
       password,
     })
 
+    
+
     if (error) {
       setError(error.message)
     } else {
+      const user = data.user
+      if (user) {
+        const {error: insertErr } = await supabase.from("users").insert({
+          id: user.id,      // FK → auth.users.id
+          email: user.email,
+              tier: "free",     // any defaults you need
+              created_at: new Date(),
+          });
+        if (insertErr) {
+          setError(`Failed to create user profile: ${insertErr.message}`)
+          return
+        }
+      }
       setSuccess(true)
     }
     

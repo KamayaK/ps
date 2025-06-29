@@ -4,7 +4,7 @@ import { Package } from 'lucide-react'
 import type { Product } from '../../types'
 
 interface ProductGridProps {
-  products: Product[]
+  products: Product[] | []
   loading: boolean
 }
 
