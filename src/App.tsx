@@ -18,13 +18,28 @@ function App() {
     )
   }
 
-  // Show landing page for non-authenticated users
-  if (!user) {
-    return <LandingPage />
-  }
-
-  // Show dashboard for authenticated users
-  return <Dashboard user={user} />
+  return (
+    <>
+      {/* Main App Content */}
+      {!user ? <LandingPage /> : <Dashboard user={user} />}
+      
+      {/* Bolt Badge - Fixed position bottom right */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <a 
+          href="https://bolt.new" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="block hover:scale-110 transition-transform duration-300 drop-shadow-lg hover:drop-shadow-xl"
+        >
+          <img 
+            src="/white_circle_360x360.png" 
+            alt="Powered by Bolt" 
+            className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm border-2 border-white/20 hover:border-orange-500/50 transition-all duration-300"
+          />
+        </a>
+      </div>
+    </>
+  )
 }
 
 export default App
