@@ -54,7 +54,7 @@ export function VideoSection() {
               <div className="relative w-full h-96">
                 <iframe
                   className="w-full h-full"
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/h2s19cm6mxk?autoplay=1&rel=0&modestbranding=1"
                   title="PriceSniper Mission Briefing"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
