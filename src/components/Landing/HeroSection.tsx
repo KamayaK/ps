@@ -119,11 +119,24 @@ export function HeroSection() {
             <div className="relative">
               <div className="relative z-10">
                 <img
-                  src="https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="DIY Warrior with Power Tools"
+                  src="/freepik__the-style-is-candid-image-photography-with-natural__83960.png"
+                  alt="Tactical Price Sniper - Elite surveillance operative with precision targeting equipment"
                   className="w-full h-96 lg:h-[600px] object-cover rounded-lg shadow-2xl border-4 border-zinc-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent rounded-lg"></div>
+                
+                {/* Tactical Overlay Elements */}
+                <div className="absolute top-4 right-4 bg-red-600/90 backdrop-blur-sm px-3 py-2 rounded-lg border border-red-400">
+                  <div className="flex items-center">
+                    <div className="w-2 h-2 bg-red-400 rounded-full mr-2 animate-pulse"></div>
+                    <span className="text-white font-bold text-sm uppercase tracking-wide">TARGET LOCKED</span>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-4 left-4 bg-zinc-900/90 backdrop-blur-sm p-4 rounded-lg border border-orange-500">
+                  <div className="text-orange-500 font-black text-xl">PRECISION</div>
+                  <div className="text-zinc-300 text-sm uppercase font-bold">Price Targeting</div>
+                </div>
               </div>
               
               {/* Floating Stats Cards */}
