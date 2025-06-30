@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuth } from './hooks/useAuth'
 import { AuthPage } from './components/Auth/AuthPage'
 import { Dashboard } from './components/Dashboard/Dashboard'
+import { LandingPage } from './components/LandingPage/LandingPage'
 
 function App() {
   const { user, loading } = useAuth()
+  const [showAuth, setShowAuth] = useState(false)
 
   if (loading) {
     return (
@@ -17,7 +19,18 @@ function App() {
     )
   }
 
-  return user ? <Dashboard user={user} /> : <AuthPage />
+  // If user is authenticated, show dashboard
+  if (user) {
+    return <Dashboard user={user} />
+  }
+
+  // If not authenticated and showAuth is true, show auth page
+  if (showAuth) {
+    return <AuthPage />
+  }
+
+  // Otherwise show landing page
+  return <LandingPage onNavigateToAuth={() => setShowAuth(true)} />
 }
 
 export default App
