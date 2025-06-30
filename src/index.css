@@ -18,3 +18,138 @@ html {
 *:focus {
   scroll-behavior: smooth;
 }
+
+/* Mobile-first responsive typography */
+@layer base {
+  html {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 481px) {
+    html {
+      font-size: 15px;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    html {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Enhanced touch targets for mobile */
+@layer components {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Responsive container padding */
+  .container-padding {
+    @apply px-3;
+  }
+  
+  @media (min-width: 481px) {
+    .container-padding {
+      @apply px-4;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .container-padding {
+      @apply px-6;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container-padding {
+      @apply px-8;
+    }
+  }
+}
+
+/* Responsive image optimization */
+@layer utilities {
+  .responsive-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    .responsive-image {
+      border-radius: 0.375rem;
+    }
+  }
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 480px) {
+  /* Reduce motion for better mobile performance */
+  .animate-pulse {
+    animation-duration: 3s;
+  }
+  
+  /* Optimize text rendering on mobile */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Tablet-specific optimizations */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Slightly larger touch targets for tablets */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 769px) {
+  /* Enhanced hover effects for desktop */
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Smooth transitions for desktop interactions */
+  .desktop-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus improvements for keyboard navigation */
+@layer components {
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-zinc-900;
+  }
+}
