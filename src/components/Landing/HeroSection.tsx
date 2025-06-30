@@ -14,35 +14,38 @@ export function HeroSection() {
   return (
     <>
       <section className="relative min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
-        {/* Navigation with Camo Background */}
-        <nav className="relative z-20 bg-zinc-900">
+        {/* Navigation with New Camo Background */}
+        <nav className="relative z-20 h-20">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/header.png')`
+              backgroundImage: `url('/header copy.png')`
             }}
           ></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
           
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex items-center justify-between">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div className="flex items-center justify-between w-full">
               <div className="flex items-center">
                 <Crosshair className="w-8 h-8 text-orange-500 mr-3 drop-shadow-lg" />
                 <h1 className="text-2xl font-black text-white tracking-tighter drop-shadow-lg">
                   PRICE<span className="text-orange-500">SNIPER</span>
                 </h1>
+                <div className="ml-4 px-3 py-1 bg-green-600/90 backdrop-blur-sm text-white text-xs font-bold rounded-full uppercase tracking-wide border border-green-400">
+                  OPERATIONAL
+                </div>
               </div>
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => openAuthModal('login')}
-                  className="flex items-center px-4 py-2 text-white hover:text-orange-500 font-semibold uppercase tracking-wide transition-colors duration-200 drop-shadow-lg hover:drop-shadow-xl"
+                  className="flex items-center px-4 py-2 text-white hover:text-orange-400 font-semibold uppercase tracking-wide transition-colors duration-200 drop-shadow-lg hover:drop-shadow-xl backdrop-blur-sm hover:bg-white/10 rounded-md"
                 >
                   <LogIn className="w-4 h-4 mr-2" />
                   Login
                 </button>
                 <button
                   onClick={() => openAuthModal('signup')}
-                  className="flex items-center px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-md uppercase tracking-wide transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  className="flex items-center px-6 py-2 bg-orange-600/90 hover:bg-orange-700 backdrop-blur-sm text-white font-bold rounded-md uppercase tracking-wide transition-all duration-200 shadow-lg hover:shadow-xl border border-orange-400/50 hover:border-orange-300"
                 >
                   <UserPlus className="w-4 h-4 mr-2" />
                   Deploy
