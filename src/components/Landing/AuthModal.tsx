@@ -20,6 +20,9 @@ export function AuthModal({ isOpen, onClose, initialMode, title }: AuthModalProp
     }
   }, [isOpen, initialMode])
 
+  // Dynamic title based on current mode
+  const currentTitle = mode === 'login' ? 'TACTICAL LOGIN' : 'TACTICAL SIGNUP'
+
   if (!isOpen) return null
 
   return (
@@ -37,7 +40,7 @@ export function AuthModal({ isOpen, onClose, initialMode, title }: AuthModalProp
           {mode === 'login' ? (
             <LoginForm onToggleMode={() => setMode('signup')} />
           ) : (
-            <SignupForm onToggleMode={() => setMode('login')} title={title} />
+            <SignupForm onToggleMode={() => setMode('login')} title={currentTitle} />
           )}
         </div>
       </div>
