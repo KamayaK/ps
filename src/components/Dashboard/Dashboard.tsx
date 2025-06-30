@@ -151,15 +151,24 @@ export function Dashboard({ user }: DashboardProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
+    <div className="min-h-screen bg-gradient-to-br from-green-900 via-green-800 to-black relative overflow-hidden">
+      {/* Camouflage pattern overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-40 h-40 bg-green-700 rounded-full blur-2xl"></div>
+        <div className="absolute top-60 right-32 w-32 h-32 bg-green-600 rounded-full blur-xl"></div>
+        <div className="absolute bottom-40 left-1/4 w-48 h-48 bg-green-800 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-1/3 w-36 h-36 bg-green-700 rounded-full blur-xl"></div>
+        <div className="absolute top-1/2 left-1/2 w-28 h-28 bg-green-600 rounded-full blur-lg"></div>
+      </div>
+      
       <Header user={user} />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         <div className="mb-8">
           <h2 className="text-3xl font-black text-white mb-2 uppercase tracking-wide">
             Mission Control
           </h2>
-          <p className="text-zinc-400">
+          <p className="text-stone-200 font-medium">
             {loading 
               ? "Loading targets..." 
               : `Tracking ${filteredAndSortedProducts.length} targets across multiple sectors`
@@ -169,7 +178,7 @@ export function Dashboard({ user }: DashboardProps) {
         </div>
 
         {error && (
-          <div className="mb-6 bg-yellow-900/50 border border-yellow-600 text-yellow-200 px-4 py-3 rounded">
+          <div className="mb-6 bg-orange-100 border-2 border-orange-300 text-orange-800 px-4 py-3 rounded font-semibold">
             <strong>Warning:</strong> {error}
           </div>
         )}
