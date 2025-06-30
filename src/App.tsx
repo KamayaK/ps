@@ -1,5 +1,6 @@
 import React from 'react'
 import { useAuth } from './hooks/useAuth'
+import { LandingPage } from './components/Landing/LandingPage'
 import { AuthPage } from './components/Auth/AuthPage'
 import { Dashboard } from './components/Dashboard/Dashboard'
 
@@ -17,7 +18,13 @@ function App() {
     )
   }
 
-  return user ? <Dashboard user={user} /> : <AuthPage />
+  // Show landing page for non-authenticated users
+  if (!user) {
+    return <LandingPage />
+  }
+
+  // Show dashboard for authenticated users
+  return <Dashboard user={user} />
 }
 
 export default App

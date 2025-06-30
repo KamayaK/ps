@@ -1,0 +1,77 @@
+import React from 'react'
+import { Play, Monitor } from 'lucide-react'
+
+export function VideoSection() {
+  return (
+    <section className="py-20 bg-zinc-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center mb-6">
+            <Monitor className="w-8 h-8 text-orange-500 mr-3" />
+            <h2 className="text-4xl font-black text-white uppercase tracking-tight">
+              Mission Briefing
+            </h2>
+          </div>
+          <p className="text-xl text-zinc-400 max-w-3xl mx-auto">
+            Watch our tactical overview to understand how PriceSniper deploys advanced 
+            surveillance technology to secure the best deals for your home improvement missions.
+          </p>
+        </div>
+
+        {/* Video Container */}
+        <div className="relative bg-zinc-800 rounded-lg overflow-hidden shadow-2xl border border-zinc-700">
+          <div className="aspect-w-16 aspect-h-9 relative">
+            <div className="w-full h-96 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
+              {/* Video Placeholder */}
+              <div className="text-center">
+                <div className="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 hover:bg-orange-700 transition-colors duration-300 cursor-pointer group">
+                  <Play className="w-12 h-12 text-white ml-1 group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-wide">
+                  Deploy Training Protocol
+                </h3>
+                <p className="text-zinc-400">
+                  Click to initiate mission briefing sequence
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Video Controls Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-zinc-900/90 to-transparent p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h4 className="text-white font-bold text-lg uppercase tracking-wide">
+                  Tactical Overview
+                </h4>
+                <p className="text-zinc-400 text-sm">
+                  Duration: 3:47 | Classification: Public
+                </p>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                <span className="text-red-400 text-sm font-bold uppercase">Live</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Video Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div className="bg-zinc-800 border border-zinc-700 p-6 rounded-lg text-center">
+            <div className="text-3xl font-black text-orange-500 mb-2">15,000+</div>
+            <div className="text-zinc-400 uppercase tracking-wide font-semibold">Views</div>
+          </div>
+          <div className="bg-zinc-800 border border-zinc-700 p-6 rounded-lg text-center">
+            <div className="text-3xl font-black text-green-500 mb-2">98%</div>
+            <div className="text-zinc-400 uppercase tracking-wide font-semibold">Satisfaction</div>
+          </div>
+          <div className="bg-zinc-800 border border-zinc-700 p-6 rounded-lg text-center">
+            <div className="text-3xl font-black text-blue-500 mb-2">4.9★</div>
+            <div className="text-zinc-400 uppercase tracking-wide font-semibold">Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
