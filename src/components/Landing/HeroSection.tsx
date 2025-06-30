@@ -11,6 +11,21 @@ export function HeroSection() {
     setIsAuthModalOpen(true)
   }
 
+  const scrollToMissionBriefing = (e: React.MouseEvent) => {
+    e.preventDefault()
+    const element = document.getElementById('mission-briefing')
+    if (element) {
+      const headerOffset = 80 // Account for any fixed headers
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
     <>
       <section className="relative min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
@@ -89,7 +104,10 @@ export function HeroSection() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="group bg-orange-600 hover:bg-orange-700 text-white font-black py-3 px-6 rounded-lg text-base uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                <button 
+                  onClick={scrollToMissionBriefing}
+                  className="group bg-orange-600 hover:bg-orange-700 text-white font-black py-3 px-6 rounded-lg text-base uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl"
+                >
                   <Play className="w-5 h-5 inline mr-2 group-hover:animate-pulse" />
                   Watch Mission Briefing
                 </button>
