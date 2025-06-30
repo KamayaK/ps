@@ -17,7 +17,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }: AuthModalP
     setMode(initialMode)
   }, [initialMode])
 
-  // Handle escape key press
+  // Handle escape key press and body scroll
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isOpen) {
@@ -45,6 +45,13 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }: AuthModalP
     }
   }
 
+  const handleCloseClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log('Close button clicked') // Debug log
+    onClose()
+  }
+
   const handleToggleMode = () => {
     setMode(mode === 'login' ? 'signup' : 'login')
   }
@@ -57,14 +64,15 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }: AuthModalP
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
       <div className="relative bg-zinc-900 border border-zinc-700 rounded-lg shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         <button
-          onClick={onClose}
-          className="absolute top-4 right-4 z-10 text-zinc-400 hover:text-white transition-colors duration-200 bg-zinc-800/50 hover:bg-zinc-700 rounded-full p-2"
+          onClick={handleCloseClick}
+          className="absolute top-4 right-4 z-20 text-zinc-400 hover:text-white transition-colors duration-200 bg-zinc-800/80 hover:bg-zinc-700 rounded-full p-2 border border-zinc-600 hover:border-zinc-500"
           aria-label="Close modal"
+          type="button"
         >
           <X className="w-5 h-5" />
         </button>
         
-        <div className="p-8">
+        <div className="p-8 pt-12">
           {mode === 'login' ? (
             <LoginForm onToggleMode={handleToggleMode} />
           ) : (
