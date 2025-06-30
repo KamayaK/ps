@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Crosshair, Play, LogIn, UserPlus } from 'lucide-react'
+import { Crosshair, Play, UserPlus } from 'lucide-react'
 import { AuthModal } from './AuthModal'
 
 export function HeroSection() {
@@ -53,12 +53,12 @@ export function HeroSection() {
               </div>
               <div className="flex items-center space-x-2 sm:space-x-4">
                 <button
-                  onClick={() => openAuthModal('login')}
+                  onClick={() => openAuthModal('signup')}
                   className="flex items-center px-2 sm:px-4 py-2 text-white hover:text-orange-400 font-semibold uppercase tracking-wide transition-colors duration-200 drop-shadow-lg hover:drop-shadow-xl backdrop-blur-sm hover:bg-white/10 rounded-md text-xs sm:text-sm min-h-[44px]"
                 >
-                  <LogIn className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
-                  <span className="hidden sm:inline">Login</span>
-                  <span className="sm:hidden">In</span>
+                  <UserPlus className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                  <span className="hidden sm:inline">Register</span>
+                  <span className="sm:hidden">Join</span>
                 </button>
                 <button
                   onClick={() => openAuthModal('signup')}
@@ -66,7 +66,7 @@ export function HeroSection() {
                 >
                   <UserPlus className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   <span className="hidden sm:inline">Deploy</span>
-                  <span className="sm:hidden">Join</span>
+                  <span className="sm:hidden">Start</span>
                 </button>
               </div>
             </div>
