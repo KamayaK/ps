@@ -28,9 +28,9 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', title }: Aut
         
         <div className="p-8">
           {mode === 'login' ? (
-            <LoginForm onToggleMode={() => setMode('signup')} />
+            <LoginForm onToggleMode={() => setMode('login')} />
           ) : (
-            <SignupForm onToggleMode={() => setMode('login')} title={title} />
+            <SignupForm onToggleMode={() => setMode('signup')} title={title} />
           )}
         </div>
       </div>
