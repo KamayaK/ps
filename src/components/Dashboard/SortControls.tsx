@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react'
+import { ArrowUpDown, ArrowUp, ArrowDown, Target } from 'lucide-react'
 import type { SortField, SortDirection } from '../../types'
 
 interface SortControlsProps {
@@ -17,27 +17,35 @@ export function SortControls({ sortField, sortDirection, onSort }: SortControlsP
   }
 
   const buttons = [
-    { field: 'name' as SortField, label: 'Name' },
-    { field: 'price' as SortField, label: 'Price' },
-    { field: 'rating' as SortField, label: 'Rating' },
-    { field: 'discount' as SortField, label: 'Discount' }
+    { field: 'name' as SortField, label: 'NAME' },
+    { field: 'price' as SortField, label: 'PRICE' },
+    { field: 'rating' as SortField, label: 'RATING' },
+    { field: 'discount' as SortField, label: 'DISCOUNT' }
   ]
 
   return (
-    <div className="bg-zinc-900 border border-zinc-700 rounded-lg p-4 mb-6">
+    <div className="high-contrast-card p-6 mb-6 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"></div>
+      
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-bold text-white uppercase tracking-wide mb-0">
-          Sort Order
-        </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex items-center">
+          <Target className="w-6 h-6 text-orange-500 mr-3 tactical-glow" />
+          <h3 className="text-xl font-bold text-white military-heading">
+            SORT ORDER
+          </h3>
+          <div className="ml-4 text-xs text-orange-400 stencil-text">
+            TARGET PRIORITY
+          </div>
+        </div>
+        <div className="flex flex-wrap gap-3">
           {buttons.map(({ field, label }) => (
             <button
               key={field}
               onClick={() => onSort(field)}
-              className={`flex items-center px-4 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition-colors duration-200 ${
+              className={`flex items-center px-4 py-2 rounded-md text-sm font-bold stencil-text transition-all duration-200 border-2 ${
                 sortField === field
-                  ? 'bg-orange-600 text-white'
-                  : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700'
+                  ? 'tactical-button border-orange-500'
+                  : 'bg-zinc-800 text-zinc-300 hover:bg-zinc-700 border-zinc-600 hover:border-zinc-500'
               }`}
             >
               {getSortIcon(field)}

@@ -1,3 +1,176 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Military Camouflage Patterns */
+@layer utilities {
+  .camo-gradient {
+    background: linear-gradient(45deg, 
+      #2d3748 0%, 
+      #1a202c 15%, 
+      #2d3748 30%, 
+      #4a5568 45%, 
+      #2d3748 60%, 
+      #1a202c 75%, 
+      #2d3748 90%
+    );
+    background-size: 40px 40px;
+    animation: camo-shift 20s ease-in-out infinite;
+  }
+  
+  .camo-gradient-alt {
+    background: linear-gradient(135deg, 
+      #1a202c 0%, 
+      #2d3748 20%, 
+      #4a5568 40%, 
+      #2d3748 60%, 
+      #1a202c 80%, 
+      #2d3748 100%
+    );
+    background-size: 60px 60px;
+  }
+  
+  .military-border {
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #d69e2e, #f56500, #d69e2e) 1;
+    position: relative;
+  }
+  
+  .military-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #d69e2e, #f56500, #d69e2e);
+    z-index: -1;
+    border-radius: inherit;
+  }
+  
+  .stencil-text {
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.8);
+  }
+  
+  .tactical-glow {
+    box-shadow: 
+      0 0 10px rgba(245, 101, 0, 0.3),
+      0 0 20px rgba(245, 101, 0, 0.2),
+      0 0 30px rgba(245, 101, 0, 0.1);
+  }
+  
+  .radar-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .radar-sweep::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(245, 101, 0, 0.1) 50%, 
+      transparent 100%
+    );
+    animation: radar-sweep 3s ease-in-out infinite;
+  }
+  
+  .military-grid {
+    background-image: 
+      linear-gradient(rgba(245, 101, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 101, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .combat-ready {
+    background: linear-gradient(135deg, 
+      #1a202c 0%, 
+      #2d3748 25%, 
+      #1a202c 50%, 
+      #2d3748 75%, 
+      #1a202c 100%
+    );
+    border: 1px solid #d69e2e;
+    position: relative;
+  }
+  
+  .combat-ready::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid rgba(245, 101, 0, 0.3);
+    pointer-events: none;
+  }
+}
+
+@keyframes camo-shift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+@keyframes radar-sweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Military Typography */
+.military-heading {
+  font-family: 'Courier New', monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: 
+    2px 2px 0px rgba(0,0,0,0.8),
+    0 0 10px rgba(245, 101, 0, 0.5);
+}
+
+/* Enhanced Contrast Elements */
+.high-contrast-card {
+  background: linear-gradient(135deg, #0f1419 0%, #1a202c 100%);
+  border: 2px solid #d69e2e;
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.8),
+    inset 0 1px 0 rgba(245, 101, 0, 0.2);
+}
+
+.tactical-button {
+  background: linear-gradient(135deg, #d69e2e 0%, #f56500 100%);
+  border: 2px solid #f56500;
+  box-shadow: 
+    0 4px 15px rgba(245, 101, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  transition: all 0.2s ease;
+}
+
+.tactical-button:hover {
+  background: linear-gradient(135deg, #f56500 0%, #d69e2e 100%);
+  box-shadow: 
+    0 6px 20px rgba(245, 101, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.tactical-input {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  border: 2px solid #4a5568;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.tactical-input:focus {
+  border-color: #d69e2e;
+  box-shadow: 
+    inset 0 2px 5px rgba(0,0,0,0.5),
+    0 0 0 3px rgba(214, 158, 46, 0.2);
+}
