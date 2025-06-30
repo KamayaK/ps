@@ -14,8 +14,43 @@ export function HeroSection() {
   return (
     <>
       <section className="relative min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
-        {/* Camo Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10">
+        {/* Navigation with Camo Background */}
+        <nav 
+          className="relative z-20 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('/header.png')`
+          }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <Crosshair className="w-8 h-8 text-orange-500 mr-3 drop-shadow-lg" />
+                <h1 className="text-2xl font-black text-white tracking-tighter drop-shadow-lg">
+                  PRICE<span className="text-orange-500">SNIPER</span>
+                </h1>
+              </div>
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={() => openAuthModal('login')}
+                  className="flex items-center px-4 py-2 text-white hover:text-orange-500 font-semibold uppercase tracking-wide transition-colors duration-200 drop-shadow-lg hover:drop-shadow-xl"
+                >
+                  <LogIn className="w-4 h-4 mr-2" />
+                  Login
+                </button>
+                <button
+                  onClick={() => openAuthModal('signup')}
+                  className="flex items-center px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-md uppercase tracking-wide transition-colors duration-200 shadow-lg hover:shadow-xl"
+                >
+                  <UserPlus className="w-4 h-4 mr-2" />
+                  Deploy
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        {/* Camo Pattern Overlay for rest of section */}
+        <div className="absolute inset-0 opacity-10 mt-20">
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/20 via-transparent to-orange-900/20"></div>
           <div className="absolute top-0 left-0 w-full h-full" 
                style={{
@@ -23,35 +58,7 @@ export function HeroSection() {
                }}></div>
         </div>
 
-        {/* Navigation */}
-        <nav className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <Crosshair className="w-8 h-8 text-orange-500 mr-3" />
-              <h1 className="text-2xl font-black text-white tracking-tighter">
-                PRICE<span className="text-orange-500">SNIPER</span>
-              </h1>
-            </div>
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => openAuthModal('login')}
-                className="flex items-center px-4 py-2 text-white hover:text-orange-500 font-semibold uppercase tracking-wide transition-colors duration-200"
-              >
-                <LogIn className="w-4 h-4 mr-2" />
-                Login
-              </button>
-              <button
-                onClick={() => openAuthModal('signup')}
-                className="flex items-center px-6 py-2 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-md uppercase tracking-wide transition-colors duration-200"
-              >
-                <UserPlus className="w-4 h-4 mr-2" />
-                Deploy
-              </button>
-            </div>
-          </div>
-        </nav>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Column - Content */}
             <div className="text-center lg:text-left">
