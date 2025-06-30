@@ -64,17 +64,17 @@ useEffect(() => {
   if (tier !== 'free') return null;
 
   return (
-    <div className="p-4 rounded-lg border-2 border-orange-300 text-center max-w-md mx-auto my-4 bg-stone-100 shadow-lg">
-      <p className="mb-3 text-stone-800 font-bold">Upgrade to view more tactical gear</p>
+    <div className="p-2 rounded-md border border-yellow-600 text-center max-w-md mx-auto my-2">
+      <p className="mb-2 text-gray-700">Upgrade to view more</p>
       <button
         onClick ={(e)=>handleUpgradeClick(e)}
-        className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-md font-black uppercase tracking-wide transition-colors duration-200 shadow-lg"
+        className="bg-yellow-600 text-red px-4 py-2 rounded hover:bg-red-700"
       >
-        Upgrade Mission
+        Upgrade
       </button>
       {showEmail && (
-        <p className="mt-4 text-sm text-stone-700 font-medium">
-          Send an upgrade request to <strong className="text-orange-600">support@pricesniper.com</strong>
+        <p className="mt-4 text-sm text-gray-600">
+          Send an upgrade request to <strong>support@pricesniper.com</strong>
         </p>
       )}
     </div>

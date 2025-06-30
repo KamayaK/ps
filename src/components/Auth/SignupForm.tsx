@@ -49,16 +49,16 @@ export function SignupForm({ onToggleMode }: SignupFormProps) {
 
   if (success) {
     return (
-      <div className="bg-stone-100 border-2 border-stone-300 p-8 rounded-lg shadow-2xl w-full max-w-md">
+      <div className="bg-zinc-900 border border-zinc-700 p-8 rounded-lg shadow-2xl w-full max-w-md">
         <div className="text-center">
-          <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
-          <h2 className="text-2xl font-black text-stone-800 mb-4 uppercase tracking-wide">MISSION REGISTERED</h2>
-          <p className="text-stone-600 mb-6 font-medium">
+          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-white mb-4">MISSION REGISTERED</h2>
+          <p className="text-zinc-400 mb-6">
             Your account has been created successfully. You can now access PriceSniper.
           </p>
           <button
             onClick={onToggleMode}
-            className="bg-orange-600 hover:bg-orange-700 text-white font-black py-3 px-6 rounded-md transition-colors duration-200 uppercase tracking-wide shadow-lg"
+            className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 uppercase tracking-wide"
           >
             Proceed to Login
           </button>
@@ -68,27 +68,27 @@ export function SignupForm({ onToggleMode }: SignupFormProps) {
   }
 
   return (
-    <div className="bg-stone-100 border-2 border-stone-300 p-8 rounded-lg shadow-2xl w-full max-w-md">
+    <div className="bg-zinc-900 border border-zinc-700 p-8 rounded-lg shadow-2xl w-full max-w-md">
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
-          <UserPlus className="w-8 h-8 text-orange-600 mr-2" />
-          <h2 className="text-2xl font-black text-stone-800 uppercase tracking-wide">TACTICAL REGISTRATION</h2>
+          <UserPlus className="w-8 h-8 text-orange-500 mr-2" />
+          <h2 className="text-2xl font-bold text-white">TACTICAL REGISTRATION</h2>
         </div>
-        <p className="text-stone-600 font-semibold">Join the price surveillance unit</p>
+        <p className="text-zinc-400">Join the price surveillance unit</p>
       </div>
 
       <form onSubmit={handleSignup} className="space-y-6">
         <div>
-          <label className="block text-sm font-black text-stone-700 mb-2 uppercase tracking-wide">
+          <label className="block text-sm font-semibold text-zinc-300 mb-2 uppercase tracking-wide">
             Email
           </label>
           <div className="relative">
-            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-stone-500" />
+            <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zinc-500" />
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white border-2 border-stone-300 rounded-md text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 font-medium"
+              className="w-full pl-10 pr-4 py-3 bg-zinc-800 border border-zinc-600 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               placeholder="Enter your email"
               required
             />
@@ -96,16 +96,16 @@ export function SignupForm({ onToggleMode }: SignupFormProps) {
         </div>
 
         <div>
-          <label className="block text-sm font-black text-stone-700 mb-2 uppercase tracking-wide">
+          <label className="block text-sm font-semibold text-zinc-300 mb-2 uppercase tracking-wide">
             Password
           </label>
           <div className="relative">
-            <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-stone-500" />
+            <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zinc-500" />
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white border-2 border-stone-300 rounded-md text-stone-800 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-600 font-medium"
+              className="w-full pl-10 pr-4 py-3 bg-zinc-800 border border-zinc-600 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               placeholder="Create password (min 6 characters)"
               required
               minLength={6}
@@ -114,27 +114,27 @@ export function SignupForm({ onToggleMode }: SignupFormProps) {
         </div>
 
         {error && (
-          <div className="flex items-center p-3 bg-red-100 border-2 border-red-300 rounded-md">
-            <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
-            <span className="text-red-700 text-sm font-semibold">{error}</span>
+          <div className="flex items-center p-3 bg-red-900/50 border border-red-600 rounded-md">
+            <AlertCircle className="w-5 h-5 text-red-400 mr-2" />
+            <span className="text-red-400 text-sm">{error}</span>
           </div>
         )}
 
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-orange-400 text-white font-black py-3 px-4 rounded-md transition-colors duration-200 uppercase tracking-wide text-lg shadow-lg"
+          className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-orange-800 text-white font-bold py-3 px-4 rounded-md transition-colors duration-200 uppercase tracking-wide"
         >
           {loading ? 'PROCESSING...' : 'ACTIVATE ACCOUNT'}
         </button>
       </form>
 
       <div className="mt-6 text-center">
-        <p className="text-stone-600 font-medium">
+        <p className="text-zinc-400">
           Already have clearance?{' '}
           <button
             onClick={onToggleMode}
-            className="text-orange-600 hover:text-orange-700 font-black uppercase tracking-wide"
+            className="text-orange-500 hover:text-orange-400 font-semibold uppercase tracking-wide"
           >
             Login Here
           </button>

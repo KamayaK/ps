@@ -23,7 +23,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
 
   return (
-    <div className="bg-stone-100 border-2 border-stone-300 rounded-lg overflow-hidden hover:border-orange-600 transition-colors duration-200 shadow-lg">
+    <div className="bg-zinc-900 border border-zinc-700 rounded-lg overflow-hidden hover:border-orange-500 transition-colors duration-200">
       <div className="relative">
         <img
           src={product.image_url}
@@ -31,22 +31,22 @@ export function ProductCard({ product }: ProductCardProps) {
           className="w-full h-48 object-cover"
         />
         {product.profit_margin && (
-          <div className="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-black">
+          <div className="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">
             -{product.profit_margin}%
           </div>
         )}
-        <div className="absolute top-2 left-2 flex items-center bg-stone-800/90 backdrop-blur-sm px-2 py-1 rounded-full">
-          <MapPin className="w-3 h-3 text-orange-600 mr-1" />
+        <div className="absolute top-2 left-2 flex items-center bg-zinc-900/80 backdrop-blur-sm px-2 py-1 rounded-full">
+          <MapPin className="w-3 h-3 text-orange-500 mr-1" />
           <span className="text-white text-xs font-bold">{product.state}</span>
         </div>
       </div>
 
       <div className="p-4">
         <div className="flex items-start justify-between mb-2">
-          <h3 className="text-stone-800 font-black text-sm leading-tight line-clamp-2 flex-1">
+          <h3 className="text-white font-bold text-sm leading-tight line-clamp-2 flex-1">
             {product.title}
           </h3>
-          <div className={`ml-2 px-2 py-1 rounded-full text-xs font-black ${
+          <div className={`ml-2 px-2 py-1 rounded-full text-xs font-bold ${
             product.stock_status 
               ? 'bg-green-600 text-white' 
               : 'bg-red-600 text-white'
@@ -61,33 +61,33 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className="flex items-center mb-2">
-          <Package className="w-4 h-4 text-stone-600 mr-1" />
-          <span className="text-stone-600 text-xs font-medium">{product.category}</span>
-          <ShoppingCart className="w-4 h-4 text-stone-600 ml-2" />
-          <span className="text-stone-600 text-xs font-medium">{product.store_name}</span>
+          <Package className="w-4 h-4 text-zinc-400 mr-1" />
+          <span className="text-zinc-400 text-xs">{product.category}</span>
+          <ShoppingCart className="w-6 h-6 text-gray-700 ml-2" />
+          <span className="text-zinc-400 text-xs">{product.store_name}</span>
         </div>
 
         <div className="flex items-center mb-3">
           <div className="flex items-center">
             <Star className="w-4 h-4 text-yellow-500 fill-current" />
-            <span className="text-stone-800 text-sm font-bold ml-1">{product.product_rating}</span>
+            <span className="text-white text-sm font-bold ml-1">{product.product_rating}</span>
           </div>
-          <Tags className="w-4 h-4 text-stone-600 ml-4" />
-          <span className="text-stone-600 text-xs font-medium">ID: {product.product}</span>
+          <Tags className="w-4 h-4 text-gray-700 ml-4" />
+          <span className="text-zinc-400 text-xs">ID: {product.product}</span>
         </div>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <span className="text-2xl font-black text-orange-600">
+            <span className="text-2xl font-black text-orange-500">
               {formatPrice(product.price)}
             </span>
             {product.retail_price && (
-              <span className="text-stone-500 text-sm line-through ml-2 font-medium">
+              <span className="text-zinc-500 text-sm line-through ml-2">
                 {formatPrice(product.retail_price)}
               </span>
             )}
           </div>
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md text-sm font-black uppercase tracking-wide transition-colors duration-200 shadow-lg"
+          <button className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition-colors duration-200"
           onClick={(e)=> openExternalLink(e,product.product,product.store_id)}
           >
 
