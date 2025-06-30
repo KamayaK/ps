@@ -106,53 +106,6 @@ export function VideoSection() {
             <div className="text-zinc-400 uppercase tracking-wide font-semibold">Rating</div>
           </div>
         </div>
-
-        {/* Additional Training Resources */}
-        <div className="mt-16 bg-zinc-800 border border-zinc-700 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-white mb-6 uppercase tracking-wide text-center">
-            Additional Training Resources
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-zinc-900 border border-zinc-600 p-6 rounded-lg hover:border-orange-500 transition-colors duration-300">
-              <div className="flex items-center mb-4">
-                <Play className="w-6 h-6 text-orange-500 mr-3" />
-                <h4 className="text-white font-bold uppercase">Quick Start Guide</h4>
-              </div>
-              <p className="text-zinc-400 text-sm mb-4">
-                Essential tactics for new operatives. Learn the basics of price surveillance.
-              </p>
-              <button className="text-orange-500 hover:text-orange-400 font-semibold text-sm uppercase tracking-wide">
-                Watch Now →
-              </button>
-            </div>
-            
-            <div className="bg-zinc-900 border border-zinc-600 p-6 rounded-lg hover:border-green-500 transition-colors duration-300">
-              <div className="flex items-center mb-4">
-                <Play className="w-6 h-6 text-green-500 mr-3" />
-                <h4 className="text-white font-bold uppercase">Advanced Filtering</h4>
-              </div>
-              <p className="text-zinc-400 text-sm mb-4">
-                Master advanced search and filtering techniques for precision targeting.
-              </p>
-              <button className="text-green-500 hover:text-green-400 font-semibold text-sm uppercase tracking-wide">
-                Watch Now →
-              </button>
-            </div>
-            
-            <div className="bg-zinc-900 border border-zinc-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-300">
-              <div className="flex items-center mb-4">
-                <Play className="w-6 h-6 text-blue-500 mr-3" />
-                <h4 className="text-white font-bold uppercase">Deal Alerts</h4>
-              </div>
-              <p className="text-zinc-400 text-sm mb-4">
-                Set up automated alerts for maximum efficiency in deal acquisition.
-              </p>
-              <button className="text-blue-500 hover:text-blue-400 font-semibold text-sm uppercase tracking-wide">
-                Watch Now →
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
