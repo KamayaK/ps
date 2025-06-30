@@ -26,10 +26,11 @@ function App() {
       {/* Bolt Badge - Fixed position bottom right */}
       <div className="fixed bottom-6 right-6 z-50">
         <a 
-          href="https://bolt.new" 
+          href="https://bolt.new/~/sb1-kcqhqy" 
           target="_blank" 
           rel="noopener noreferrer"
           className="block hover:scale-110 transition-transform duration-300 drop-shadow-lg hover:drop-shadow-xl"
+          title="View this project on Bolt"
         >
           <img 
             src="/white_circle_360x360.png" 
