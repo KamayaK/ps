@@ -6,12 +6,19 @@ import { SignupForm } from '../Auth/SignupForm'
 interface AuthModalProps {
   isOpen: boolean
   onClose: () => void
-  initialMode?: 'login' | 'signup'
-  title?: string
+  initialMode: 'login' | 'signup'
+  title: string
 }
 
-export function AuthModal({ isOpen, onClose, initialMode = 'login', title }: AuthModalProps) {
+export function AuthModal({ isOpen, onClose, initialMode, title }: AuthModalProps) {
   const [mode, setMode] = useState(initialMode)
+
+  // Reset mode when modal opens with new initialMode
+  React.useEffect(() => {
+    if (isOpen) {
+      setMode(initialMode)
+    }
+  }, [isOpen, initialMode])
 
   if (!isOpen) return null
 
@@ -28,9 +35,9 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login', title }: Aut
         
         <div className="p-8">
           {mode === 'login' ? (
-            <LoginForm onToggleMode={() => setMode('login')} />
+            <LoginForm onToggleMode={() => setMode('signup')} />
           ) : (
-            <SignupForm onToggleMode={() => setMode('signup')} title={title} />
+            <SignupForm onToggleMode={() => setMode('login')} title={title} />
           )}
         </div>
       </div>
