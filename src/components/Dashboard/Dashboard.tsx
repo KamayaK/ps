@@ -24,11 +24,12 @@ const fetchProducts = async (): Promise<Product[] | null> => {
       console.error('No active session or access token found');
       return null;
     }
-    const response = await fetch('https://pricesniper.fly.dev/products', {
-    // const response = await fetch('http://127.0.0.1:8000/products', {
+    // const response = await fetch('https://pricesniper.fly.dev/products', {
+    const response = await fetch('http://127.0.0.1:8000/products', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${session.access_token}`,
+        'X-Refresh-Token': session.refresh_token, 
         'Content-Type': 'application/json',
       },
     });
