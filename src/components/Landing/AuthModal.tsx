@@ -7,9 +7,10 @@ interface AuthModalProps {
   isOpen: boolean
   onClose: () => void
   initialMode?: 'login' | 'signup'
+  title?: string
 }
 
-export function AuthModal({ isOpen, onClose, initialMode = 'login' }: AuthModalProps) {
+export function AuthModal({ isOpen, onClose, initialMode = 'login', title }: AuthModalProps) {
   const [mode, setMode] = useState(initialMode)
 
   if (!isOpen) return null
@@ -29,7 +30,7 @@ export function AuthModal({ isOpen, onClose, initialMode = 'login' }: AuthModalP
           {mode === 'login' ? (
             <LoginForm onToggleMode={() => setMode('signup')} />
           ) : (
-            <SignupForm onToggleMode={() => setMode('login')} />
+            <SignupForm onToggleMode={() => setMode('login')} title={title} />
           )}
         </div>
       </div>
