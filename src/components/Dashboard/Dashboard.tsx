@@ -25,6 +25,7 @@ const fetchProducts = async (): Promise<Product[] | null> => {
       return null;
     }
     const response = await fetch('https://pricesniper.fly.dev/products', {
+    // const response = await fetch('http://127.0.0.1:8000/products', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${session.access_token}`,
