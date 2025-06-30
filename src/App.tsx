@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuth } from './hooks/useAuth'
 import { LandingPage } from './components/Landing/LandingPage'
-import { AuthPage } from './components/Auth/AuthPage'
+import { HowItWorksPage } from './components/HowItWorks/HowItWorksPage'
 import { Dashboard } from './components/Dashboard/Dashboard'
 
 function App() {
@@ -16,6 +16,13 @@ function App() {
         </div>
       </div>
     )
+  }
+
+  // Simple routing based on URL path
+  const currentPath = window.location.pathname
+
+  if (currentPath === '/how-it-works') {
+    return <HowItWorksPage />
   }
 
   return (

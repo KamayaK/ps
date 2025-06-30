@@ -31,59 +31,59 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Mission Links */}
+          {/* Mission Control Links */}
           <div>
             <h4 className="text-white font-bold text-lg uppercase tracking-wide mb-4">
               Mission Control
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Terms of Engagement
+                <a href="/how-it-works#mission-overview" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Mission Overview
                 </a>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Mission Brief
+                <a href="/how-it-works#price-surveillance" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Price Surveillance
                 </a>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Base Camp
+                <a href="/how-it-works#target-acquisition" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Target Acquisition
                 </a>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Support Division
+                <a href="/how-it-works#deployment-strategy" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Deployment Strategy
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Operations */}
+          {/* Operations Links */}
           <div>
             <h4 className="text-white font-bold text-lg uppercase tracking-wide mb-4">
               Operations
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Deploy System
+                <a href="/how-it-works#tactical-features" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Tactical Features
                 </a>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Training Protocol
+                <a href="/how-it-works#future-targets" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Future Targets
                 </a>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Intel Reports
+                <a href="/how-it-works#mission-success" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Mission Success
                 </a>
               </li>
               <li>
-                <a href="#" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
-                  Field Manual
+                <a href="/how-it-works#support-division" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                  Support Division
                 </a>
               </li>
             </ul>
