@@ -18,10 +18,11 @@ function App() {
     )
   }
 
-  // Simple routing based on URL path
+  // Enhanced routing based on URL path
   const currentPath = window.location.pathname
 
-  if (currentPath === '/how-it-works') {
+  // Handle How It Works page routing
+  if (currentPath === '/how-it-works' || currentPath.startsWith('/how-it-works/')) {
     return <HowItWorksPage />
   }
 

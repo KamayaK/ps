@@ -2,6 +2,11 @@ import React from 'react'
 import { Crosshair, Mail, MapPin, Phone } from 'lucide-react'
 
 export function Footer() {
+  const handleNavigation = (path: string) => {
+    // Use window.location.href for proper navigation with hash support
+    window.location.href = path
+  }
+
   return (
     <footer className="bg-zinc-950 border-t border-zinc-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -38,24 +43,36 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="/how-it-works#mission-overview" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#mission-overview')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Mission Overview
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/how-it-works#price-surveillance" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#price-surveillance')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Price Surveillance
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/how-it-works#target-acquisition" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#target-acquisition')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Target Acquisition
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/how-it-works#deployment-strategy" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#deployment-strategy')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Deployment Strategy
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -67,24 +84,36 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="/how-it-works#tactical-features" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#tactical-features')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Tactical Features
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/how-it-works#future-targets" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#future-targets')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Future Targets
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/how-it-works#mission-success" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#mission-success')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Mission Success
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/how-it-works#support-division" className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold">
+                <button 
+                  onClick={() => handleNavigation('/how-it-works#support-division')}
+                  className="text-zinc-400 hover:text-orange-500 transition-colors duration-200 uppercase text-sm font-semibold text-left"
+                >
                   Support Division
-                </a>
+                </button>
               </li>
             </ul>
           </div>
