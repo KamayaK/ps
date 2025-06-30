@@ -13,10 +13,22 @@ export function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 overflow-hidden">
-        {/* Camo Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-900/20 via-transparent to-orange-900/20"></div>
+      <section 
+        className="relative min-h-screen overflow-hidden"
+        style={{
+          backgroundImage: `url('/header.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundColor: '#18181b' // Fallback color (zinc-900)
+        }}
+      >
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/60"></div>
+        
+        {/* Additional tactical overlay pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-transparent to-orange-900/30"></div>
           <div className="absolute top-0 left-0 w-full h-full" 
                style={{
                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234B5320' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -58,19 +70,19 @@ export function HeroSection() {
               <div className="flex items-center justify-center lg:justify-start mb-8">
                 <Crosshair className="w-16 h-16 text-orange-500 mr-4" />
                 <div>
-                  <h1 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none">
+                  <h1 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none drop-shadow-2xl">
                     PRICE<span className="text-orange-500">SNIPER</span>
                   </h1>
                   <div className="h-2 bg-gradient-to-r from-orange-500 to-red-500 mt-2"></div>
                 </div>
               </div>
               
-              <h2 className="text-2xl lg:text-3xl font-bold text-zinc-300 mb-8 uppercase tracking-wide">
+              <h2 className="text-2xl lg:text-3xl font-bold text-zinc-100 mb-8 uppercase tracking-wide drop-shadow-lg">
                 Elite Savings for DIY Warriors<br />
                 <span className="text-orange-400">& Home Repair Frontliners</span>
               </h2>
               
-              <p className="text-lg text-zinc-400 mb-10 max-w-xl mx-auto lg:mx-0">
+              <p className="text-lg text-zinc-200 mb-10 max-w-xl mx-auto lg:mx-0 drop-shadow-md">
                 Deploy tactical precision to hunt down the best deals on Home Depot products. 
                 Real-time price surveillance across multiple sectors with military-grade accuracy.
               </p>
@@ -82,7 +94,7 @@ export function HeroSection() {
                 </button>
                 <button
                   onClick={() => openAuthModal('signup')}
-                  className="border-2 border-zinc-600 hover:border-orange-500 text-white font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide transition-all duration-300 hover:bg-orange-500/10"
+                  className="border-2 border-zinc-400 hover:border-orange-500 text-white font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide transition-all duration-300 hover:bg-orange-500/20 backdrop-blur-sm"
                 >
                   Deploy Now
                 </button>
@@ -90,17 +102,17 @@ export function HeroSection() {
               
               {/* Status Indicators */}
               <div className="flex flex-wrap gap-6 mt-12 justify-center lg:justify-start">
-                <div className="flex items-center">
+                <div className="flex items-center bg-black/30 backdrop-blur-sm px-3 py-2 rounded-full">
                   <div className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
-                  <span className="text-zinc-400 text-sm font-semibold uppercase">System Online</span>
+                  <span className="text-zinc-200 text-sm font-semibold uppercase">System Online</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center bg-black/30 backdrop-blur-sm px-3 py-2 rounded-full">
                   <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-                  <span className="text-zinc-400 text-sm font-semibold uppercase">Targets Acquired</span>
+                  <span className="text-zinc-200 text-sm font-semibold uppercase">Targets Acquired</span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center bg-black/30 backdrop-blur-sm px-3 py-2 rounded-full">
                   <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                  <span className="text-zinc-400 text-sm font-semibold uppercase">Mission Ready</span>
+                  <span className="text-zinc-200 text-sm font-semibold uppercase">Mission Ready</span>
                 </div>
               </div>
             </div>
@@ -117,22 +129,22 @@ export function HeroSection() {
               </div>
               
               {/* Floating Stats Cards */}
-              <div className="absolute -top-4 -left-4 bg-zinc-900 border border-orange-500 p-4 rounded-lg shadow-xl">
+              <div className="absolute -top-4 -left-4 bg-zinc-900/90 backdrop-blur-sm border border-orange-500 p-4 rounded-lg shadow-xl">
                 <div className="text-orange-500 font-black text-2xl">2,847</div>
-                <div className="text-zinc-400 text-xs uppercase font-bold">Active Targets</div>
+                <div className="text-zinc-300 text-xs uppercase font-bold">Active Targets</div>
               </div>
               
-              <div className="absolute -bottom-4 -right-4 bg-zinc-900 border border-green-500 p-4 rounded-lg shadow-xl">
+              <div className="absolute -bottom-4 -right-4 bg-zinc-900/90 backdrop-blur-sm border border-green-500 p-4 rounded-lg shadow-xl">
                 <div className="text-green-500 font-black text-2xl">98.7%</div>
-                <div className="text-zinc-400 text-xs uppercase font-bold">Mission Success</div>
+                <div className="text-zinc-300 text-xs uppercase font-bold">Mission Success</div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-zinc-500 animate-bounce">
-          <div className="w-6 h-10 border-2 border-zinc-600 rounded-full flex justify-center">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-zinc-300 animate-bounce">
+          <div className="w-6 h-10 border-2 border-zinc-400 rounded-full flex justify-center backdrop-blur-sm bg-black/20">
             <div className="w-1 h-3 bg-orange-500 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
