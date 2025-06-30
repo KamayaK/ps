@@ -51,8 +51,8 @@ export function Dashboard({ user }: DashboardProps) {
   const [selectedCategory, setSelectedCategory] = useState('')
   const [sortField, setSortField] = useState<SortField>('title')
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc')
-  const [loading, setLoading] = useState(true)
-  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true) // Start with loading true
+  const [products, setProducts] = useState<Product[]>([]) // Initialize as empty array, not null
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -65,6 +65,7 @@ export function Dashboard({ user }: DashboardProps) {
         if (result && result.length > 0) {
           setProducts(result);
         } else {
+          // Fallback to mock products if API fails
           console.log('Using mock products as fallback');
           setProducts(mockProducts);
           setError('Using offline data - could not connect to server');
@@ -81,6 +82,7 @@ export function Dashboard({ user }: DashboardProps) {
     loadProducts();
   }, []);
 
+  // Get unique states and categories for filters - only run when products exist
   const availableStates = useMemo(() => {
     if (!products || products.length === 0) return [];
     return [...new Set(products.map(p => p.state))].filter(Boolean).sort();
@@ -91,6 +93,7 @@ export function Dashboard({ user }: DashboardProps) {
     return [...new Set(products.map(p => p.category))].filter(Boolean).sort();
   }, [products]);
 
+  // Filter and sort products - only run when products exist
   const filteredAndSortedProducts = useMemo(() => {
     if (!products || products.length === 0) return [];
     
@@ -103,6 +106,7 @@ export function Dashboard({ user }: DashboardProps) {
       return matchesSearch && matchesState && matchesCategory;
     });
 
+    // Sort products
     filtered.sort((a, b) => {
       let aValue: string | number;
       let bValue: string | number;
@@ -147,46 +151,32 @@ export function Dashboard({ user }: DashboardProps) {
   };
 
   return (
-    <div className="min-h-screen camo-gradient military-grid">
+    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
       <Header user={user} />
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8 combat-ready p-6 rounded-lg">
-          <div className="flex items-center justify-between">
-            <div>
-              <h2 className="text-4xl font-black text-white mb-2 military-heading">
-                MISSION CONTROL
-              </h2>
-              <p className="text-zinc-300 stencil-text">
-                {loading 
-                  ? "LOADING TARGETS..." 
-                  : `TRACKING ${filteredAndSortedProducts.length} TARGETS ACROSS MULTIPLE SECTORS`
-                }
-              </p>
-            </div>
-            <div className="text-right">
-              <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-xs font-bold rounded-full stencil-text border-2 border-green-400">
-                <div className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
-                SURVEILLANCE ACTIVE
-              </div>
-              <div className="text-xs text-orange-400 mt-2 stencil-text">
-                CLEARANCE: CLASSIFIED
-              </div>
-            </div>
-          </div>
+        <div className="mb-8">
+          <h2 className="text-3xl font-black text-white mb-2 uppercase tracking-wide">
+            Mission Control
+          </h2>
+          <p className="text-zinc-400">
+            {loading 
+              ? "Loading targets..." 
+              : `Tracking ${filteredAndSortedProducts.length} targets across multiple sectors`
+            }
+          </p>
+          
         </div>
 
         {error && (
-          <div className="mb-6 bg-yellow-900/70 border-2 border-yellow-500 text-yellow-200 px-6 py-4 rounded-lg">
-            <div className="flex items-center">
-              <div className="w-4 h-4 bg-yellow-500 rounded-full mr-3 animate-pulse"></div>
-              <strong className="stencil-text">WARNING:</strong>
-              <span className="ml-2 stencil-text">{error}</span>
-            </div>
+          <div className="mb-6 bg-yellow-900/50 border border-yellow-600 text-yellow-200 px-4 py-3 rounded">
+            <strong>Warning:</strong> {error}
           </div>
         )}
+        {
+          <UpgradePrompt />
 
-        <UpgradePrompt />
+        }
 
         {!loading && (
           <>
@@ -210,7 +200,7 @@ export function Dashboard({ user }: DashboardProps) {
         )}
 
         <ProductGrid
-          products={filteredAndSortedProducts}
+          products={filteredAndSortedProducts} // Pass filtered products, not raw products
           loading={loading}
         />
       </main>

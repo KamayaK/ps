@@ -1,5 +1,5 @@
 import React from 'react'
-import { Filter, Search, MapPin, Package, Radar } from 'lucide-react'
+import { Filter, Search, MapPin, Package } from 'lucide-react'
 
 interface FilterControlsProps {
   searchTerm: string
@@ -23,46 +23,38 @@ export function FilterControls({
   availableCategories
 }: FilterControlsProps) {
   return (
-    <div className="high-contrast-card p-6 mb-6 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500"></div>
-      
-      <div className="flex items-center mb-6">
-        <div className="relative">
-          <Filter className="w-6 h-6 text-orange-500 mr-3 tactical-glow" />
-          <Radar className="w-3 h-3 text-white absolute -bottom-1 -right-1 bg-zinc-900 rounded-full" />
-        </div>
-        <h2 className="text-xl font-bold text-white military-heading">MISSION PARAMETERS</h2>
-        <div className="ml-auto text-xs text-orange-400 stencil-text">
-          FILTER STATUS: ACTIVE
-        </div>
+    <div className="bg-zinc-900 border border-zinc-700 rounded-lg p-6 mb-6">
+      <div className="flex items-center mb-4">
+        <Filter className="w-5 h-5 text-orange-500 mr-2" />
+        <h2 className="text-lg font-bold text-white uppercase tracking-wide">Mission Parameters</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div>
-          <label className="block text-sm font-semibold text-zinc-200 mb-3 stencil-text">
-            <Search className="w-4 h-4 inline mr-2 text-orange-500" />
-            SEARCH TARGET
+          <label className="block text-sm font-semibold text-zinc-300 mb-2 uppercase tracking-wide">
+            <Search className="w-4 h-4 inline mr-1" />
+            Search Target
           </label>
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="SEARCH PRODUCTS..."
-            className="w-full px-4 py-3 tactical-input rounded-md text-white placeholder-zinc-400 focus:outline-none transition-all duration-200 stencil-text"
+            placeholder="Search products..."
+            className="w-full px-4 py-3 bg-zinc-800 border border-zinc-600 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-zinc-200 mb-3 stencil-text">
-            <MapPin className="w-4 h-4 inline mr-2 text-orange-500" />
-            STATE SECTOR
+          <label className="block text-sm font-semibold text-zinc-300 mb-2 uppercase tracking-wide">
+            <MapPin className="w-4 h-4 inline mr-1" />
+            State Sector
           </label>
           <select
             value={selectedState}
             onChange={(e) => onStateChange(e.target.value)}
-            className="w-full px-4 py-3 tactical-input rounded-md text-white focus:outline-none transition-all duration-200 stencil-text"
+            className="w-full px-4 py-3 bg-zinc-800 border border-zinc-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           >
-            <option value="">ALL STATES</option>
+            <option value="">All States</option>
             {availableStates.map(state => (
               <option key={state} value={state}>{state}</option>
             ))}
@@ -70,16 +62,16 @@ export function FilterControls({
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-zinc-200 mb-3 stencil-text">
-            <Package className="w-4 h-4 inline mr-2 text-orange-500" />
-            CATEGORY
+          <label className="block text-sm font-semibold text-zinc-300 mb-2 uppercase tracking-wide">
+            <Package className="w-4 h-4 inline mr-1" />
+            Category
           </label>
           <select
             value={selectedCategory}
             onChange={(e) => onCategoryChange(e.target.value)}
-            className="w-full px-4 py-3 tactical-input rounded-md text-white focus:outline-none transition-all duration-200 stencil-text"
+            className="w-full px-4 py-3 bg-zinc-800 border border-zinc-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
           >
-            <option value="">ALL CATEGORIES</option>
+            <option value="">All Categories</option>
             {availableCategories.map(category => (
               <option key={category} value={category}>{category}</option>
             ))}
