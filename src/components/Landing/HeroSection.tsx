@@ -140,9 +140,10 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Right Column - Hero Image */}
+            {/* Right Column - Hero Image with Overlapping Decorative Elements */}
             <div className="relative order-1 lg:order-2 px-4 sm:px-0">
-              <div className="relative z-10">
+              {/* Main Image Container */}
+              <div className="relative z-20">
                 <picture>
                   {/* Mobile optimized image */}
                   <source 
@@ -158,14 +159,14 @@ export function HeroSection() {
                   <img
                     src="/freepik__the-style-is-candid-image-photography-with-natural__83960.png"
                     alt="Tactical Price Sniper - Elite surveillance operative with precision targeting equipment"
-                    className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] xl:h-[500px] object-cover rounded-lg shadow-2xl border-2 sm:border-4 border-zinc-700"
+                    className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] xl:h-[500px] object-cover rounded-lg shadow-2xl border-2 sm:border-4 border-zinc-700 relative z-10"
                     loading="eager"
                   />
                 </picture>
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent rounded-lg z-20"></div>
                 
                 {/* Tactical Overlay Elements - Responsive positioning */}
-                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-red-600/90 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-2 rounded-lg border border-red-400">
+                <div className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-red-600/90 backdrop-blur-sm px-2 sm:px-3 py-1 sm:py-2 rounded-lg border border-red-400 z-30">
                   <div className="flex items-center">
                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full mr-1 sm:mr-2 animate-pulse"></div>
                     <span className="text-white font-bold text-xs sm:text-sm uppercase tracking-wide">
@@ -175,7 +176,7 @@ export function HeroSection() {
                   </div>
                 </div>
                 
-                <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-zinc-900/90 backdrop-blur-sm p-2 sm:p-4 rounded-lg border border-orange-500">
+                <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 bg-zinc-900/90 backdrop-blur-sm p-2 sm:p-4 rounded-lg border border-orange-500 z-30">
                   <div className="text-orange-500 font-black text-sm sm:text-lg lg:text-xl">PRECISION</div>
                   <div className="text-zinc-300 text-xs sm:text-sm uppercase font-bold">
                     <span className="hidden sm:inline">Price Targeting</span>
@@ -184,20 +185,41 @@ export function HeroSection() {
                 </div>
               </div>
               
-              {/* Floating Stats Cards - Responsive sizing and positioning */}
-              <div className="absolute -top-2 sm:-top-4 -left-2 sm:-left-4 bg-zinc-900 border border-orange-500 p-2 sm:p-4 rounded-lg shadow-xl">
-                <div className="text-orange-500 font-black text-lg sm:text-xl lg:text-2xl">2,847</div>
-                <div className="text-zinc-400 text-xs uppercase font-bold">
+              {/* Floating Stats Cards with Subtle Overlap - Positioned behind main image */}
+              {/* Top-left card - overlaps with image by ~12% */}
+              <div className="absolute top-3 sm:top-6 left-0 sm:left-2 lg:left-4 bg-zinc-900/95 backdrop-blur-sm border border-orange-500 p-2 sm:p-3 lg:p-4 rounded-lg shadow-xl z-10 transform hover:scale-105 transition-transform duration-300">
+                <div className="text-orange-500 font-black text-base sm:text-lg lg:text-xl xl:text-2xl">2,847</div>
+                <div className="text-zinc-400 text-xs sm:text-xs lg:text-sm uppercase font-bold leading-tight">
                   <span className="hidden sm:inline">Active Targets</span>
                   <span className="sm:hidden">Targets</span>
                 </div>
               </div>
               
-              <div className="absolute -bottom-2 sm:-bottom-4 -right-2 sm:-right-4 bg-zinc-900 border border-green-500 p-2 sm:p-4 rounded-lg shadow-xl">
-                <div className="text-green-500 font-black text-lg sm:text-xl lg:text-2xl">98.7%</div>
-                <div className="text-zinc-400 text-xs uppercase font-bold">
+              {/* Bottom-right card - overlaps with image by ~15% */}
+              <div className="absolute bottom-3 sm:bottom-6 right-0 sm:right-2 lg:right-4 bg-zinc-900/95 backdrop-blur-sm border border-green-500 p-2 sm:p-3 lg:p-4 rounded-lg shadow-xl z-10 transform hover:scale-105 transition-transform duration-300">
+                <div className="text-green-500 font-black text-base sm:text-lg lg:text-xl xl:text-2xl">98.7%</div>
+                <div className="text-zinc-400 text-xs sm:text-xs lg:text-sm uppercase font-bold leading-tight">
                   <span className="hidden sm:inline">Mission Success</span>
                   <span className="sm:hidden">Success</span>
+                </div>
+              </div>
+
+              {/* Additional decorative elements for enhanced visual interest */}
+              {/* Small accent card - top right, minimal overlap */}
+              <div className="absolute top-8 sm:top-12 lg:top-16 right-3 sm:right-6 lg:right-8 bg-blue-600/90 backdrop-blur-sm border border-blue-400 p-1.5 sm:p-2 lg:p-3 rounded-md shadow-lg z-10 transform hover:scale-110 transition-transform duration-300">
+                <div className="text-blue-300 font-black text-xs sm:text-sm lg:text-base">24/7</div>
+                <div className="text-blue-200 text-xs uppercase font-bold leading-tight">
+                  <span className="hidden lg:inline">Surveillance</span>
+                  <span className="lg:hidden">Live</span>
+                </div>
+              </div>
+
+              {/* Small accent card - bottom left, minimal overlap */}
+              <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-3 sm:left-6 lg:left-8 bg-purple-600/90 backdrop-blur-sm border border-purple-400 p-1.5 sm:p-2 lg:p-3 rounded-md shadow-lg z-10 transform hover:scale-110 transition-transform duration-300">
+                <div className="text-purple-300 font-black text-xs sm:text-sm lg:text-base">$2.1M</div>
+                <div className="text-purple-200 text-xs uppercase font-bold leading-tight">
+                  <span className="hidden lg:inline">Saved</span>
+                  <span className="lg:hidden">Total</span>
                 </div>
               </div>
             </div>
