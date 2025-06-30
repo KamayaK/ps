@@ -7,14 +7,8 @@ export function HeroSection() {
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login')
 
   const openAuthModal = (mode: 'login' | 'signup') => {
-    console.log('Opening auth modal with mode:', mode) // Debug log
     setAuthMode(mode)
     setIsAuthModalOpen(true)
-  }
-
-  const closeAuthModal = () => {
-    console.log('Closing auth modal') // Debug log
-    setIsAuthModalOpen(false)
   }
 
   const scrollToMissionBriefing = (e: React.MouseEvent) => {
@@ -59,26 +53,16 @@ export function HeroSection() {
               </div>
               <div className="flex items-center space-x-2 sm:space-x-4">
                 <button
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    openAuthModal('login')
-                  }}
-                  className="flex items-center px-2 sm:px-4 py-2 text-white hover:text-orange-400 font-semibold uppercase tracking-wide transition-colors duration-200 drop-shadow-lg hover:drop-shadow-xl backdrop-blur-sm hover:bg-white/10 rounded-md text-xs sm:text-sm min-h-[44px] cursor-pointer"
-                  type="button"
+                  onClick={() => openAuthModal('login')}
+                  className="flex items-center px-2 sm:px-4 py-2 text-white hover:text-orange-400 font-semibold uppercase tracking-wide transition-colors duration-200 drop-shadow-lg hover:drop-shadow-xl backdrop-blur-sm hover:bg-white/10 rounded-md text-xs sm:text-sm min-h-[44px]"
                 >
                   <LogIn className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   <span className="hidden sm:inline">Deploy</span>
                   <span className="sm:hidden">In</span>
                 </button>
                 <button
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    openAuthModal('signup')
-                  }}
-                  className="flex items-center px-3 sm:px-6 py-2 bg-orange-600/90 hover:bg-orange-700 backdrop-blur-sm text-white font-bold rounded-md uppercase tracking-wide transition-all duration-200 shadow-lg hover:shadow-xl border border-orange-400/50 hover:border-orange-300 text-xs sm:text-sm min-h-[44px] cursor-pointer"
-                  type="button"
+                  onClick={() => openAuthModal('signup')}
+                  className="flex items-center px-3 sm:px-6 py-2 bg-orange-600/90 hover:bg-orange-700 backdrop-blur-sm text-white font-bold rounded-md uppercase tracking-wide transition-all duration-200 shadow-lg hover:shadow-xl border border-orange-400/50 hover:border-orange-300 text-xs sm:text-sm min-h-[44px]"
                 >
                   <UserPlus className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   <span className="hidden sm:inline">Register</span>
@@ -132,11 +116,7 @@ export function HeroSection() {
                   <span className="sm:hidden">Watch Demo</span>
                 </button>
                 <button
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    openAuthModal('signup')
-                  }}
+                  onClick={() => openAuthModal('signup')}
                   className="border-2 border-zinc-600 hover:border-orange-500 text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-lg text-sm sm:text-base uppercase tracking-wide transition-all duration-300 hover:bg-orange-500/10 min-h-[44px] w-full sm:w-auto"
                 >
                   Deploy Now
@@ -256,7 +236,7 @@ export function HeroSection() {
 
       <AuthModal
         isOpen={isAuthModalOpen}
-        onClose={closeAuthModal}
+        onClose={() => setIsAuthModalOpen(false)}
         initialMode={authMode}
       />
     </>

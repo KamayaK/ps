@@ -72,7 +72,7 @@ export function SignupForm({ onToggleMode }: SignupFormProps) {
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
           <UserPlus className="w-8 h-8 text-orange-500 mr-2" />
-          <h2 className="text-2xl font-bold text-white">TACTICAL SIGNUP</h2>
+          <h2 className="text-2xl font-bold text-white">TACTICAL REGISTRATION</h2>
         </div>
         <p className="text-zinc-400">Join the price surveillance unit</p>
       </div>
