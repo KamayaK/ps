@@ -62,44 +62,44 @@ export function HeroSection() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center pt-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
             {/* Left Column - Content */}
             <div className="text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start mb-8">
-                <Crosshair className="w-16 h-16 text-orange-500 mr-4" />
+              <div className="flex items-center justify-center lg:justify-start mb-6">
+                <Crosshair className="w-12 h-12 text-orange-500 mr-3" />
                 <div>
-                  <h1 className="text-6xl lg:text-8xl font-black text-white tracking-tighter leading-none">
+                  <h1 className="text-4xl lg:text-5xl font-black text-white tracking-tighter leading-none">
                     PRICE<span className="text-orange-500">SNIPER</span>
                   </h1>
-                  <div className="h-2 bg-gradient-to-r from-orange-500 to-red-500 mt-2"></div>
+                  <div className="h-1 bg-gradient-to-r from-orange-500 to-red-500 mt-2"></div>
                 </div>
               </div>
               
-              <h2 className="text-2xl lg:text-3xl font-bold text-zinc-300 mb-8 uppercase tracking-wide">
+              <h2 className="text-xl lg:text-2xl font-bold text-zinc-300 mb-6 uppercase tracking-wide">
                 Elite Savings for DIY Warriors<br />
                 <span className="text-orange-400">& Home Repair Frontliners</span>
               </h2>
               
-              <p className="text-lg text-zinc-400 mb-10 max-w-xl mx-auto lg:mx-0">
+              <p className="text-base text-zinc-400 mb-8 max-w-xl mx-auto lg:mx-0">
                 Deploy tactical precision to hunt down the best deals on Home Depot products. 
                 Real-time price surveillance across multiple sectors with military-grade accuracy.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="group bg-orange-600 hover:bg-orange-700 text-white font-black py-4 px-8 rounded-lg text-lg uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl">
-                  <Play className="w-6 h-6 inline mr-3 group-hover:animate-pulse" />
+                <button className="group bg-orange-600 hover:bg-orange-700 text-white font-black py-3 px-6 rounded-lg text-base uppercase tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl">
+                  <Play className="w-5 h-5 inline mr-2 group-hover:animate-pulse" />
                   Watch Mission Briefing
                 </button>
                 <button
                   onClick={() => openAuthModal('signup')}
-                  className="border-2 border-zinc-600 hover:border-orange-500 text-white font-bold py-4 px-8 rounded-lg text-lg uppercase tracking-wide transition-all duration-300 hover:bg-orange-500/10"
+                  className="border-2 border-zinc-600 hover:border-orange-500 text-white font-bold py-3 px-6 rounded-lg text-base uppercase tracking-wide transition-all duration-300 hover:bg-orange-500/10"
                 >
                   Deploy Now
                 </button>
               </div>
               
               {/* Status Indicators */}
-              <div className="flex flex-wrap gap-6 mt-12 justify-center lg:justify-start">
+              <div className="flex flex-wrap gap-6 mt-8 justify-center lg:justify-start">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-green-500 rounded-full mr-3 animate-pulse"></div>
                   <span className="text-zinc-400 text-sm font-semibold uppercase">System Online</span>
@@ -121,7 +121,7 @@ export function HeroSection() {
                 <img
                   src="/freepik__the-style-is-candid-image-photography-with-natural__83960.png"
                   alt="Tactical Price Sniper - Elite surveillance operative with precision targeting equipment"
-                  className="w-full h-96 lg:h-[600px] object-cover rounded-lg shadow-2xl border-4 border-zinc-700"
+                  className="w-full h-80 lg:h-[500px] object-cover rounded-lg shadow-2xl border-4 border-zinc-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/60 via-transparent to-transparent rounded-lg"></div>
                 
